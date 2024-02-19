@@ -2,6 +2,7 @@
 In the main.py file, the FastAPI application is initialized, including the routes, middleware, and dependencies.
 The uvicorn library is used to run the application.
 """
+from pathlib import Path
 
 import uvicorn
 import redis.asyncio as redis
@@ -19,7 +20,9 @@ app.include_router(auth.router, prefix='/api')
 app.include_router(contacts.router, prefix="/api")
 app.include_router(users.router, prefix='/api')
 
-app.mount("/src/static", StaticFiles(directory="src/static"), name="static")
+BASE_DIR = Path(__file__).resolve().parent
+app.mount("/src/static", StaticFiles(directory=BASE_DIR.joinpath("src").joinpath("static")), name="static")
+app.mount("/docs", StaticFiles(directory=BASE_DIR.joinpath("docs")), name="docs")
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,7 +39,8 @@ async def startup() -> None:
     Initializes the redis connection for fastapi-limiter.
     :return: None
     """
-    r = await redis.Redis(host=settings.redis_host, port=settings.redis_port, db=0,
+    r = await redis.Redis(host=settings.redis_host, port=settings.redis_port,
+                          password=settings.redis_password,
                           encoding="utf-8", decode_responses=True)
     await FastAPILimiter.init(r)
 

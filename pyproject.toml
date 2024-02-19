@@ -8,7 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.108.0"
-uvicorn = "^0.25.0"
 sqlalchemy = "^2.0.25"
 psycopg2-binary = "^2.9.9"
 pydantic = {extras = ["email"], version = "^2.5.3"}
@@ -24,6 +23,7 @@ cloudinary = "^1.37.0"
 alembic = "^1.13.1"
 pytest = "^7.4.4"
 httpx = "^0.26.0"
+uvicorn = {extras = ["standart"], version = "^0.27.1"}
 
 
 [tool.poetry.group.dev.dependencies]
