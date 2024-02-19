@@ -1,7 +1,7 @@
 """
 Routes for authorization
 """
-from typing import List, Dict
+from typing import Dict
 
 from fastapi import APIRouter, HTTPException, Depends, status, Security, BackgroundTasks, Request
 from fastapi.security import OAuth2PasswordRequestForm, HTTPAuthorizationCredentials, HTTPBearer

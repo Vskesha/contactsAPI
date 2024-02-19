@@ -2,7 +2,8 @@
 ### REST API for saving your contacts
 
 ### https://contactsapi.fly.dev/docs - swagger docs
-### https://contactsapi.fly.dev/redoc - documentation
+### https://contactsapi.fly.dev/redoc - redoc
+### https://contactsapi.fly.dev/docs/_build/html/index.html - sphinx documentation
 
 - The FastAPI framework was used to create the API;
 - SQLAlchemy ORM was used to work with the database;
