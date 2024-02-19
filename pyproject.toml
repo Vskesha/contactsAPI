@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "goit-web-homework-14"
+version = "0.1.0"
+description = ""
+authors = ["Vasyl Boliukh <89039235+Vskesha@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.108.0"
+uvicorn = "^0.25.0"
+sqlalchemy = "^2.0.25"
+psycopg2-binary = "^2.9.9"
+pydantic = {extras = ["email"], version = "^2.5.3"}
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+libgravatar = "^1.0.4"
+python-multipart = "^0.0.6"
+fastapi-mail = "^1.4.1"
+redis = "^5.0.1"
+python-dotenv = "^1.0.0"
+fastapi-limiter = "^0.1.6"
+cloudinary = "^1.37.0"
+alembic = "^1.13.1"
+pytest = "^7.4.4"
+httpx = "^0.26.0"
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.2.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
