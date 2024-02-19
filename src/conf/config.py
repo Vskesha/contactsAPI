@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     postgres_db: str
     postgres_user: str
     postgres_password: str
-    postgres_port: int = 5432
+    postgres_host: str = "localhost"
     sqlalchemy_database_url: str
     secret_key: str
     algorithm: str
@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     mail_server: str
     redis_host: str = 'localhost'
     redis_port: int = 6379
+    redis_password: str | None = None
     cloudinary_name: str
     cloudinary_api_key: str
     cloudinary_api_secret: str

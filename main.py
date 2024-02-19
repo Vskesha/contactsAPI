@@ -20,6 +20,7 @@ app.include_router(contacts.router, prefix="/api")
 app.include_router(users.router, prefix='/api')
 
 app.mount("/src/static", StaticFiles(directory="src/static"), name="static")
+app.mount("/docs", StaticFiles(directory="docs"), name="docs")
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,7 +37,8 @@ async def startup() -> None:
     Initializes the redis connection for fastapi-limiter.
     :return: None
     """
-    r = await redis.Redis(host=settings.redis_host, port=settings.redis_port, db=0,
+    r = await redis.Redis(host=settings.redis_host, port=settings.redis_port,
+                          password=settings.redis_password,
                           encoding="utf-8", decode_responses=True)
     await FastAPILimiter.init(r)
 
