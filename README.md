@@ -1,9 +1,9 @@
 # GoIT_Web_homework_14
 ### REST API for saving your contacts
 
-### https://contactsapi.fly.dev/docs - swagger docs
-### https://contactsapi.fly.dev/redoc - redoc
-### https://contactsapi.fly.dev/docs/_build/html/index.html - sphinx documentation
+### https://contacts-api.koyeb.app/docs - swagger docs
+### https://contacts-api.koyeb.app/redoc - redoc
+### https://contacts-api.koyeb.app/docs/_build/html/index.html - sphinx documentation
 
 - The FastAPI framework was used to create the API;
 - SQLAlchemy ORM was used to work with the database;
